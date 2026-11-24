@@ -23,9 +23,10 @@ jobs:
             exit 0
           fi
           # So mostra o ficheiro e a linha: o conteudo encontrado nunca vai para o registo publico.
-          if git grep -I -n -i -E "$PADROES" -- . ':!*.png' ':!*.jpg' ':!*.webp' ':!Cargo.lock' | cut -d: -f1,2 > /tmp/achados; then
+          git grep -I -n -i -E "$PADROES" -- . ':!*.png' ':!*.jpg' ':!*.webp' ':!Cargo.lock' > /tmp/achados || true
+          if [ -s /tmp/achados ]; then
             echo "::error::Ha dados que nao podem ser publicos nestes ficheiros:"
-            cat /tmp/achados
+            cut -d: -f1,2 /tmp/achados
             exit 1
           fi
           echo "Nada encontrado."
