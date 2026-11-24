@@ -10,7 +10,7 @@ Código-fonte do site da **KCU Services**: <https://kcuservices.github.io>
 | `estilo.css` | Todo o estilo (um só ficheiro) |
 | `app.js` | Script pequeno e opcional: revela as secções ao descer e marca a navegação. Sem ele, a página funciona igual |
 | `404.html` | A página de "não encontrado" |
-| `favicon.svg` | O ícone do site (monograma KS) |
+| `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png`, `img/logo-kcu.webp` | O logótipo da KCU Services (todos os direitos reservados, ver MARCA.md) |
 | `fontes/` | A fonte Inter (subconjunto em WOFF2) e a sua licença ([OFL](fontes/OFL.txt)) |
 | `img/` | Prints do KCU Estúdio e do homelab, imagens dos produtos e a imagem de partilha (`og.jpg`) |
 | `robots.txt` | Deixa os motores de busca ler o site |
