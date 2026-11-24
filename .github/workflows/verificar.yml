@@ -1,0 +1,74 @@
+name: Verificar
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  privacidade:
+    name: Privacidade
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Procurar dados que nao podem ser publicos
+        env:
+          PADROES: ${{ secrets.KCU_PADROES }}
+        run: |
+          if [ -z "$PADROES" ]; then
+            echo "Sem a lista de padroes (por exemplo num fork): passo a frente."
+            exit 0
+          fi
+          # So mostra o ficheiro e a linha: o conteudo encontrado nunca vai para o registo publico.
+          if git grep -I -n -i -E "$PADROES" -- . ':!*.png' ':!*.jpg' ':!*.webp' ':!Cargo.lock' | cut -d: -f1,2 > /tmp/achados; then
+            echo "::error::Ha dados que nao podem ser publicos nestes ficheiros:"
+            cat /tmp/achados
+            exit 1
+          fi
+          echo "Nada encontrado."
+
+  qualidade:
+    name: Qualidade
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JSON valido
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, sys
+          erros = 0
+          for p in pathlib.Path('.').rglob('*.json'):
+              if '.git' in p.parts:
+                  continue
+              try:
+                  json.loads(p.read_text(encoding='utf-8-sig'))
+              except Exception as e:
+                  print(f'::error file={p}::JSON invalido: {e}')
+                  erros += 1
+          print('JSON verificados.')
+          sys.exit(1 if erros else 0)
+          PY
+      - name: Python compila
+        run: |
+          ficheiros=$(git ls-files '*.py')
+          if [ -n "$ficheiros" ]; then python3 -m py_compile $ficheiros; fi
+          echo "Python verificado."
+      - name: Shell sem erros de sintaxe
+        run: |
+          for f in $(git ls-files '*.sh'); do bash -n "$f"; done
+          echo "Shell verificado."
+      - name: PowerShell sem erros e so com ASCII
+        shell: pwsh
+        run: |
+          $erros = 0
+          foreach ($f in (git ls-files '*.ps1')) {
+            $e = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path $f), [ref]$null, [ref]$e)
+            if ($e) { $erros++; Write-Output "::error file=$f::$($e[0].Message)" }
+            if ([IO.File]::ReadAllBytes((Resolve-Path $f)) | Where-Object { $_ -gt 127 }) { $erros++; Write-Output "::error file=$f::tem caracteres fora de ASCII (o PowerShell 5.1 le-os mal)" }
+          }
+          Write-Output 'PowerShell verificado.'
+          if ($erros) { exit 1 }
