@@ -2,196 +2,781 @@
 <html lang="pt-PT">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KCU Services · Segurança, rede e apps que usamos em casa</title>
-  <meta name="description" content="Ferramentas que construímos para o nosso dia a dia: código aberto para uso pessoal, o KCU Estúdio e produtos de segurança e rede para a tua casa.">
-  <meta name="theme-color" content="#0b0d12">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>KCU Services · Feito em casa, mostrado sem cortes</title>
+  <meta name="description" content="Segurança, rede, IA local e as apps que usamos todos os dias. Código aberto para uso pessoal, o KCU Estúdio e produtos para proteger a tua casa e o teu servidor.">
+  <meta name="theme-color" content="#07080c">
   <meta name="color-scheme" content="dark">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://kcuservices.github.io/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fontes/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="img/estudio-inicio.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="estilo.css">
+  <script src="app.js" defer></script>
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_PT">
   <meta property="og:site_name" content="KCU Services">
-  <meta property="og:title" content="KCU Services · Segurança, rede e apps que usamos em casa">
-  <meta property="og:description" content="Ferramentas que construímos para o nosso dia a dia, mostradas em vídeos sem cortes.">
+  <meta property="og:title" content="KCU Services · Feito em casa, mostrado sem cortes">
+  <meta property="og:description" content="Segurança, rede, IA local e as apps que usamos todos os dias. Código aberto para uso pessoal, mostrado em vídeos sem cortes.">
   <meta property="og:url" content="https://kcuservices.github.io/">
   <meta property="og:image" content="https://kcuservices.github.io/img/og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Ecrã inicial do KCU Estúdio">
+  <meta property="og:image:alt" content="KCU Services: Feito em casa. Mostrado sem cortes. Ao lado, o ecrã inicial do KCU Estúdio.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="KCU Services · Segurança, rede e apps que usamos em casa">
-  <meta name="twitter:description" content="Ferramentas que construímos para o nosso dia a dia, mostradas em vídeos sem cortes.">
+  <meta name="twitter:title" content="KCU Services · Feito em casa, mostrado sem cortes">
+  <meta name="twitter:description" content="Segurança, rede, IA local e as apps que usamos todos os dias. Código aberto para uso pessoal, mostrado em vídeos sem cortes.">
   <meta name="twitter:image" content="https://kcuservices.github.io/img/og.jpg">
 </head>
 <body>
   <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
 
-  <header class="topo">
-    <div class="envolve topo__linha">
-      <a class="marca" href="#" aria-label="KCU Services, início">
-        <img src="favicon.svg" alt="" width="32" height="32">
+  <!-- Ícones desenhados à mão, reutilizados com <use> -->
+  <svg width="0" height="0" class="vh" aria-hidden="true" focusable="false">
+    <symbol id="i-seta" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-fora" viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ramo" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="4.5" cy="3.5" r="1.75"/><circle cx="4.5" cy="12.5" r="1.75"/><circle cx="11.5" cy="5.5" r="1.75"/><path d="M4.5 5.25v5.5M11.5 7.25c0 2.6-2.2 3.4-5.4 4.1"/></g></symbol>
+    <symbol id="i-cadeado" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><rect x="3.5" y="7" width="9" height="6.5" rx="1.6"/><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7"/></g></symbol>
+    <symbol id="i-balao" viewBox="0 0 20 20"><path d="M4 4.5h12a1.5 1.5 0 0 1 1.5 1.5v7a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H4A1.5 1.5 0 0 1 2.5 13V6A1.5 1.5 0 0 1 4 4.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6.5 9.5h7M6.5 12h4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-camara" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.75" y="2.75" width="14.5" height="14.5" rx="4.5"/><circle cx="10" cy="10" r="3.4"/></g><circle cx="14.4" cy="5.6" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-saco" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 7h12l-.9 9.2a1.5 1.5 0 0 1-1.5 1.3H6.4a1.5 1.5 0 0 1-1.5-1.3Z"/><path d="M7 9V6a3 3 0 0 1 6 0v3" stroke-linecap="round"/></g></symbol>
+    <symbol id="i-play" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 7.2v5.6l4.3-2.8Z" fill="currentColor"/></symbol>
+  </svg>
+
+  <header class="nav" id="topo">
+    <div class="envolve nav__linha">
+      <a class="marca" href="#conteudo" aria-label="KCU Services, voltar ao início">
+        <svg class="marca__ks" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true">
+          <rect width="64" height="64" rx="15" fill="#12141b"/>
+          <rect x="1" y="1" width="62" height="62" rx="14" fill="none" stroke="#ff8a3d" stroke-opacity=".85" stroke-width="2"/>
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
+            <path d="M15 18v28M15 34l13-16M20.5 28.5 29 46" stroke="#ff8a3d"/>
+            <path d="M49.5 22.5c-1.6-2.9-4.3-4.5-7.6-4.5-4.2 0-7.1 2.4-7.1 5.6 0 7.8 15 4.9 15 13.6 0 3.7-3.2 6.8-7.8 6.8-3.6 0-6.6-1.7-8.3-4.6" stroke="#34d399"/>
+          </g>
+        </svg>
         <span>KCU Services</span>
       </a>
-      <nav aria-label="Secções">
-        <ul class="menu">
-          <li><a href="#codigo">Código aberto</a></li>
-          <li><a href="#estudio">Estúdio</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#comunidade">Comunidade</a></li>
-        </ul>
+      <nav class="nav__menu" aria-label="Secções">
+        <a href="#codigo">Código aberto</a>
+        <a href="#rede">Como se liga</a>
+        <a href="#estudio">Estúdio</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#perguntas">Perguntas</a>
       </nav>
+      <a class="botao botao--pequeno botao--claro" href="https://github.com/KCUServices">
+        <svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-ramo"/></svg>
+        GitHub
+      </a>
     </div>
   </header>
 
-  <main id="conteudo">
-    <section class="heroi">
-      <div class="envolve">
-        <p class="etiqueta">KCU Services</p>
-        <h1>Segurança, rede e apps que usamos em casa.</h1>
-        <p class="heroi__texto">Aqui ficam as ferramentas que construímos para o nosso próprio dia a dia, e a forma como montámos tudo. Fazemos isto à frente de toda a gente, em <strong>vídeos sem cortes</strong>: tu dizes o que falta e nós melhoramos.</p>
+  <main id="conteudo" tabindex="-1">
+
+    <!-- ============ HERÓI ============ -->
+    <section class="heroi" aria-labelledby="heroi-titulo">
+      <div class="heroi__grelha" aria-hidden="true"></div>
+      <div class="envolve heroi__texto">
+        <a class="anuncio" href="https://github.com/KCUServices/kcu-window">
+          <span class="anuncio__tag">Novo</span>
+          <span>kcu-window: as apps do PC no telemóvel</span>
+          <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-seta"/></svg>
+        </a>
+        <h1 id="heroi-titulo">Feito em casa.<br><span class="grad">Mostrado sem cortes.</span></h1>
+        <p class="heroi__lead">Segurança, rede, IA local e as apps que usamos todos os dias. Construímos tudo para o nosso próprio dia a dia, abrimos o código para uso pessoal e mostramos cada passo em vídeos sem cortes.</p>
         <div class="botoes">
-          <a class="botao botao--laranja" href="#codigo">Ver o código aberto</a>
-          <a class="botao botao--vidro" href="#produtos">Ver os produtos</a>
+          <a class="botao botao--laranja" href="https://github.com/KCUServices">
+            <svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-ramo"/></svg>
+            Ver no GitHub
+          </a>
+          <a class="botao botao--vidro" href="#produtos">Ver produtos <svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-seta"/></svg></a>
+        </div>
+        <div class="tec">
+          <span class="tec__rotulo">Corre com</span>
+          <ul class="tec__lista" aria-label="Tecnologias que usamos">
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3 3 13" stroke="#ff8a3d" stroke-width="2.2" stroke-linecap="round"/></svg>Proxmox</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><g fill="#e6e7eb"><circle cx="3.5" cy="3.5" r="1.6" opacity=".35"/><circle cx="8" cy="3.5" r="1.6" opacity=".35"/><circle cx="12.5" cy="3.5" r="1.6" opacity=".35"/><circle cx="3.5" cy="8" r="1.6"/><circle cx="8" cy="8" r="1.6"/><circle cx="12.5" cy="8" r="1.6"/><circle cx="3.5" cy="12.5" r="1.6" opacity=".35"/><circle cx="8" cy="12.5" r="1.6"/><circle cx="12.5" cy="12.5" r="1.6" opacity=".35"/></g></svg>Tailscale</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 14V6.5a3 3 0 0 1 6 0V14M5 3.5 4 1.8M11 3.5l1-1.7" fill="none" stroke="#e6e7eb" stroke-width="1.5" stroke-linecap="round"/><circle cx="6.8" cy="8" r=".9" fill="#e6e7eb"/><circle cx="9.2" cy="8" r=".9" fill="#e6e7eb"/></svg>Ollama</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11.5 4.2A5 5 0 1 0 11.5 11.8" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="8" r="1.6" fill="#fbbf24"/></svg>ComfyUI</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><g fill="none" stroke="#f472b6" stroke-width="1.5"><circle cx="2.8" cy="8" r="1.8"/><circle cx="8" cy="8" r="1.8"/><circle cx="13.2" cy="4.5" r="1.8"/><circle cx="13.2" cy="11.5" r="1.8"/><path d="M4.6 8h1.6M9.7 7.2l1.8-1.6M9.7 8.8l1.8 1.6"/></g></svg>n8n</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="#e6e7eb" stroke-width="1.5" stroke-dasharray="2 1.45"/><circle cx="8" cy="8" r="2.4" fill="none" stroke="#e6e7eb" stroke-width="1.5"/></svg>Rust</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="envolve">
+        <div class="palco">
+          <div class="palco__brilho" aria-hidden="true"></div>
+          <figure class="browser">
+            <div class="browser__barra" aria-hidden="true">
+              <span class="browser__pontos"><i></i><i></i><i></i></span>
+              <span class="browser__url"><svg width="12" height="12"><use href="#i-cadeado"/></svg>KCU Estúdio · Início</span>
+              <span class="browser__fim"></span>
+            </div>
+            <img src="img/estudio-inicio.webp" width="1440" height="900" fetchpriority="high" decoding="async" alt="Ecrã inicial do KCU Estúdio: um resumo do dia, os passos para começar, contadores de filmes e atalhos para os estúdios Dark, Copy &amp; Paste, Pessoal e Editor.">
+          </figure>
+          <figure class="telemovel">
+            <div class="telemovel__corpo">
+              <div class="telemovel__ecra">
+                <span class="telemovel__ilha" aria-hidden="true"></span>
+                <img src="img/homelab-telemovel.webp" width="364" height="774" fetchpriority="low" decoding="async" alt="A página inicial do homelab aberta no telemóvel, com o estado do Proxmox e cartões do Portainer e do Uptime Kuma.">
+              </div>
+            </div>
+          </figure>
+          <p class="flutua flutua--a" aria-hidden="true"><span class="ponto ponto--verde"></span>11 serviços a correr</p>
+          <p class="flutua flutua--b" aria-hidden="true"><span class="flutua__chip">GPU</span>IA local em 16 GB</p>
         </div>
       </div>
     </section>
 
+    <!-- ============ NÚMEROS ============ -->
+    <section class="numeros" aria-label="O setup em números">
+      <div class="envolve">
+        <dl class="numeros__grelha">
+          <div class="numero">
+            <dt>máquinas em casa, cada uma com o seu papel</dt>
+            <dd>4</dd>
+          </div>
+          <div class="numero">
+            <dt>serviços no Proxmox, ligados 24 horas por dia</dt>
+            <dd>11</dd>
+          </div>
+          <div class="numero">
+            <dt>apps e serviços que usamos todos os dias</dt>
+            <dd>29</dd>
+          </div>
+          <div class="numero">
+            <dt>de mensalidades pela IA, que corre em casa</dt>
+            <dd>0&nbsp;€</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ CÓDIGO ABERTO ============ -->
     <section id="codigo" class="seccao" aria-labelledby="codigo-titulo">
       <div class="envolve">
-        <h2 id="codigo-titulo">Código aberto <span class="sub">(grátis para uso pessoal)</span></h2>
-        <p class="intro">Pega, aprende e adapta ao teu. São as mesmas ferramentas que usamos todos os dias, limpas de tudo o que é nosso.</p>
-        <ul class="grelha grelha--2">
-          <li class="cartao">
-            <h3><span aria-hidden="true">🪟</span> kcu-window</h3>
-            <p>Abre uma app do teu PC Windows no browser (telemóvel ou outro PC), sem ambiente de trabalho remoto. Mostra só a janela dessa app.</p>
-            <a class="ligacao" href="https://github.com/KCUServices/kcu-window">Ver no GitHub <span aria-hidden="true">→</span></a>
-          </li>
-          <li class="cartao">
-            <h3><span aria-hidden="true">🧱</span> kcu-stack</h3>
-            <p>O nosso setup completo: máquinas, Proxmox, IA e as apps que usamos todos os dias, com as definições que funcionam e o porquê de cada escolha.</p>
-            <a class="ligacao" href="https://github.com/KCUServices/kcu-stack">Ver no GitHub <span aria-hidden="true">→</span></a>
-          </li>
-          <li class="cartao">
-            <h3><span aria-hidden="true">⚙️</span> kcu-automaticos</h3>
-            <p>Os scripts que mantêm os nossos PCs Windows a funcionar sozinhos: limpar a RAM, desligar à noite, manutenção e vigia de serviços.</p>
-            <a class="ligacao" href="https://github.com/KCUServices/kcu-automaticos">Ver no GitHub <span aria-hidden="true">→</span></a>
-          </li>
-          <li class="cartao">
-            <h3><span aria-hidden="true">🤖</span> kcu-ia-local</h3>
-            <p>IA a correr em casa: transcrição compatível com a API da OpenAI, Qwen em português de Portugal no Ollama e um pipeline imagem → vídeo no ComfyUI.</p>
-            <a class="ligacao" href="https://github.com/KCUServices/kcu-ia-local">Ver no GitHub <span aria-hidden="true">→</span></a>
-          </li>
-        </ul>
-        <figure class="figura">
-          <img src="img/stack-homepage.webp" width="1200" height="660" loading="lazy" decoding="async" alt="Página inicial do homelab descrito no kcu-stack, com cartões para o Proxmox, memória, processador, rede e serviços como Portainer, Pi-hole, n8n e Uptime Kuma.">
-          <figcaption>A página inicial do nosso homelab, explicada peça a peça no kcu-stack.</figcaption>
-        </figure>
+        <header class="cabeca rv">
+          <div>
+            <p class="olho"><span class="ponto ponto--laranja"></span>Código aberto · grátis para uso pessoal</p>
+            <h2 id="codigo-titulo">As ferramentas que usamos todos os dias, limpas de tudo o que é nosso.</h2>
+          </div>
+          <p class="cabeca__lead">Quatro repositórios, cada um com o código de cada episódio (<code>ep00</code>, <code>ep01</code>…). Pega, aprende e adapta ao teu setup.</p>
+        </header>
+
+        <div class="bento">
+          <!-- kcu-window -->
+          <article class="tile tile--largo tile--janela rv">
+            <div class="tile__texto">
+              <p class="tile__repo"><svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-ramo"/></svg>kcu-window</p>
+              <h3>Uma app do teu PC no browser do telemóvel. Só a janela dela.</h3>
+              <p>Sem ambiente de trabalho remoto. Abres a página, a app arranca no PC Windows e tu usas com toque, rato ou teclado. Fechas o separador e ela fecha sozinha.</p>
+              <ul class="factos">
+                <li>H.264 até 60 fps</li>
+                <li>Toque, pinça e teclado</li>
+                <li>Câmara do telemóvel na app</li>
+                <li>Feito em Rust</li>
+              </ul>
+            </div>
+            <div class="tile__arte" aria-hidden="true">
+              <svg viewBox="0 0 560 240" class="arte-janela">
+                <defs>
+                  <linearGradient id="gj" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffa45c"/><stop offset="1" stop-color="#ff5f1f"/></linearGradient>
+                  <linearGradient id="gtela" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151821"/><stop offset="1" stop-color="#0d0f15"/></linearGradient>
+                </defs>
+                <!-- monitor -->
+                <rect x="8" y="18" width="286" height="184" rx="12" fill="url(#gtela)" stroke="rgba(255,255,255,.12)"/>
+                <path d="M8 44h286" stroke="rgba(255,255,255,.08)"/>
+                <circle cx="24" cy="31" r="3.5" fill="#3a3d4a"/><circle cx="36" cy="31" r="3.5" fill="#3a3d4a"/><circle cx="48" cy="31" r="3.5" fill="#3a3d4a"/>
+                <!-- outras janelas esbatidas -->
+                <rect x="22" y="58" width="96" height="128" rx="7" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.06)"/>
+                <rect x="32" y="70" width="60" height="6" rx="3" fill="rgba(255,255,255,.08)"/>
+                <rect x="32" y="84" width="74" height="6" rx="3" fill="rgba(255,255,255,.06)"/>
+                <rect x="32" y="98" width="48" height="6" rx="3" fill="rgba(255,255,255,.06)"/>
+                <!-- a app partilhada -->
+                <g class="arte-janela__app">
+                  <rect x="130" y="58" width="150" height="128" rx="9" fill="#141720" stroke="url(#gj)" stroke-width="1.6"/>
+                  <rect x="130" y="58" width="150" height="20" rx="9" fill="rgba(255,138,61,.12)"/>
+                  <rect x="142" y="65" width="44" height="6" rx="3" fill="#ff8a3d"/>
+                  <rect x="142" y="90" width="30" height="84" rx="5" fill="rgba(255,255,255,.05)"/>
+                  <rect x="180" y="90" width="88" height="34" rx="6" fill="rgba(255,138,61,.16)"/>
+                  <rect x="180" y="130" width="88" height="6" rx="3" fill="rgba(255,255,255,.12)"/>
+                  <rect x="180" y="142" width="64" height="6" rx="3" fill="rgba(255,255,255,.08)"/>
+                  <rect x="180" y="156" width="40" height="14" rx="7" fill="#ff8a3d"/>
+                </g>
+                <rect x="126" y="202" width="50" height="12" fill="#11131a"/>
+                <rect x="104" y="214" width="94" height="6" rx="3" fill="#1b1e27"/>
+                <!-- fluxo -->
+                <path class="fluxo" d="M300 120 C 345 120, 360 120, 410 120" fill="none" stroke="url(#gj)" stroke-width="2" stroke-dasharray="3 7" stroke-linecap="round"/>
+                <rect x="312" y="88" width="88" height="20" rx="10" fill="rgba(255,138,61,.1)" stroke="rgba(255,138,61,.35)"/>
+                <text x="356" y="102" text-anchor="middle" class="arte-txt arte-txt--laranja">H.264 · 60 fps</text>
+                <text x="356" y="146" text-anchor="middle" class="arte-txt">toque · teclado</text>
+                <!-- telemóvel -->
+                <rect x="422" y="8" width="122" height="224" rx="22" fill="#0b0c11" stroke="rgba(255,255,255,.16)"/>
+                <rect x="429" y="15" width="108" height="210" rx="16" fill="#12141b"/>
+                <rect x="466" y="21" width="34" height="9" rx="4.5" fill="#05060a"/>
+                <g>
+                  <rect x="436" y="42" width="94" height="20" rx="6" fill="rgba(255,138,61,.12)"/>
+                  <rect x="444" y="49" width="34" height="6" rx="3" fill="#ff8a3d"/>
+                  <rect x="436" y="70" width="94" height="58" rx="7" fill="rgba(255,138,61,.16)"/>
+                  <rect x="436" y="136" width="94" height="6" rx="3" fill="rgba(255,255,255,.14)"/>
+                  <rect x="436" y="148" width="70" height="6" rx="3" fill="rgba(255,255,255,.09)"/>
+                  <rect x="436" y="166" width="46" height="16" rx="8" fill="#ff8a3d"/>
+                  <circle class="toque" cx="459" cy="174" r="12" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="1.5"/>
+                </g>
+                <rect x="452" y="214" width="62" height="4" rx="2" fill="rgba(255,255,255,.25)"/>
+              </svg>
+            </div>
+            <a class="tile__link esticado" href="https://github.com/KCUServices/kcu-window">Ver o kcu-window no GitHub <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          </article>
+
+          <!-- kcu-ia-local -->
+          <article class="tile tile--ia rv">
+            <div class="tile__texto">
+              <p class="tile__repo"><svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-ramo"/></svg>kcu-ia-local</p>
+              <h3>IA a correr em casa, sem nuvem.</h3>
+              <p>Transcrição com a mesma API da OpenAI, Qwen que responde em português de Portugal e um pipeline imagem → vídeo no ComfyUI.</p>
+            </div>
+            <ul class="modelos" aria-label="Modelos usados">
+              <li><span class="modelos__nome">Whisper large-v3-turbo</span><span class="modelos__papel">transcrição</span></li>
+              <li><span class="modelos__nome">Qwen 3.5 9B <b>pt-PT</b></span><span class="modelos__papel">texto</span></li>
+              <li><span class="modelos__nome">Z-Image Turbo</span><span class="modelos__papel">imagem</span></li>
+              <li><span class="modelos__nome">Wan 2.2 14B</span><span class="modelos__papel">vídeo</span></li>
+            </ul>
+            <p class="tile__nota">Cabe numa GPU de 16 GB. Liberta a placa sozinho quando é hora de jogar.</p>
+            <a class="tile__link esticado" href="https://github.com/KCUServices/kcu-ia-local">Ver o kcu-ia-local no GitHub <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          </article>
+
+          <!-- kcu-automaticos -->
+          <article class="tile tile--term rv">
+            <div class="tile__texto">
+              <p class="tile__repo"><svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-ramo"/></svg>kcu-automaticos</p>
+              <h3>PCs Windows que tratam de si.</h3>
+              <p>Limpar a RAM, desligar de madrugada sem cortar o trabalho a ninguém, manutenção e vigia de serviços. Tudo com modo ensaio.</p>
+            </div>
+            <div class="terminal" aria-label="Exemplo de registo dos scripts" role="img">
+              <div class="terminal__barra" aria-hidden="true"><i></i><i></i><i></i><span>registo.log</span></div>
+<pre aria-hidden="true"><span class="t-h">00:30</span> <span class="t-s">ram  </span>  0,8 GB livres, cache limpa
+<span class="t-h">01:00</span> <span class="t-s">noite</span>  GPU a 64 %, volto às 01:15
+<span class="t-h">01:15</span> <span class="t-s">noite</span>  <span class="t-ok">sem uso há 20 min, a desligar</span>
+<span class="t-h">09:05</span> <span class="t-s">vigia</span>  <span class="t-av">ComfyUI falhou 2×, a arrancar</span>
+<span class="t-h">09:06</span> <span class="t-s">vigia</span>  <span class="t-ok">ComfyUI responde outra vez</span>
+<span class="t-h">13:30</span> <span class="t-s">manut</span>  4,2 GB de temporários limpos<span class="cursor"></span></pre>
+            </div>
+            <a class="tile__link esticado" href="https://github.com/KCUServices/kcu-automaticos">Ver o kcu-automaticos no GitHub <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          </article>
+
+          <!-- kcu-stack -->
+          <article class="tile tile--largo tile--stack rv">
+            <div class="tile__texto">
+              <p class="tile__repo"><svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-ramo"/></svg>kcu-stack</p>
+              <h3>O nosso setup inteiro, peça a peça, com o porquê de cada escolha.</h3>
+              <p>Quatro máquinas, um Proxmox com 11 serviços e uma ponte única pela rede privada. Nenhuma porta aberta no router.</p>
+              <ul class="factos">
+                <li>Proxmox VE 9</li>
+                <li>LXC sempre que dá</li>
+                <li>Backup semanal</li>
+              </ul>
+            </div>
+            <div class="tile__arte" aria-hidden="true">
+              <svg viewBox="0 0 520 250" class="arte-rede">
+                <defs>
+                  <radialGradient id="gponte" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#34d399" stop-opacity=".35"/><stop offset="1" stop-color="#34d399" stop-opacity="0"/></radialGradient>
+                </defs>
+                <text x="260" y="24" text-anchor="middle" class="arte-txt arte-txt--fraco">PROXMOX VE · 11 SERVIÇOS</text>
+                <g class="ligacoes" stroke="rgba(52,211,153,.45)" stroke-width="1.4" fill="none">
+                  <path d="M260 128 L96 70"/><path d="M260 128 L96 128"/><path d="M260 128 L96 186"/>
+                  <path d="M260 128 L424 70"/><path d="M260 128 L424 128"/><path d="M260 128 L424 186"/>
+                  <path d="M260 128 L200 214"/><path d="M260 128 L320 214"/>
+                </g>
+                <g class="pulsos" stroke="#5eead4" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="2 16">
+                  <path d="M260 128 L96 70"/><path d="M260 128 L424 128"/><path d="M260 128 L96 186"/><path d="M260 128 L320 214"/>
+                </g>
+                <circle cx="260" cy="128" r="56" fill="url(#gponte)"/>
+                <g class="no-rede">
+                  <rect x="40" y="57" width="112" height="26" rx="13"/><text x="96" y="74">Pi-hole</text>
+                  <rect x="40" y="115" width="112" height="26" rx="13"/><text x="96" y="132">n8n</text>
+                  <rect x="40" y="173" width="112" height="26" rx="13"/><text x="96" y="190">Homepage</text>
+                  <rect x="368" y="57" width="112" height="26" rx="13"/><text x="424" y="74">Uptime Kuma</text>
+                  <rect x="368" y="115" width="112" height="26" rx="13"/><text x="424" y="132">Umbrel</text>
+                  <rect x="368" y="173" width="112" height="26" rx="13"/><text x="424" y="190">SearXNG</text>
+                  <rect x="150" y="201" width="100" height="26" rx="13"/><text x="200" y="218">Portainer</text>
+                  <rect x="270" y="201" width="100" height="26" rx="13"/><text x="320" y="218">Agente</text>
+                </g>
+                <rect x="214" y="110" width="92" height="36" rx="10" fill="#0e1a17" stroke="#34d399" stroke-width="1.4"/>
+                <text x="260" y="133" text-anchor="middle" class="arte-txt arte-txt--verde">ponte</text>
+              </svg>
+            </div>
+            <a class="tile__link esticado" href="https://github.com/KCUServices/kcu-stack">Ver o kcu-stack no GitHub <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          </article>
+        </div>
       </div>
     </section>
 
+    <!-- ============ COMO TUDO SE LIGA ============ -->
+    <section id="rede" class="seccao seccao--rede" aria-labelledby="rede-titulo">
+      <div class="envolve">
+        <header class="cabeca rv">
+          <div>
+            <p class="olho"><span class="ponto ponto--verde"></span>Como tudo se liga</p>
+            <h2 id="rede-titulo">Quatro máquinas, uma rede privada, zero portas abertas.</h2>
+          </div>
+          <p class="cabeca__lead">Do telemóvel, em casa ou fora, chegamos a tudo pela Tailscale. Cada trabalho vai para a máquina que o faz melhor e gasta menos.</p>
+        </header>
+
+        <figure class="diagrama rv">
+          <div class="diagrama__rolo">
+            <svg class="dg-largo" viewBox="0 0 1120 480" role="img" aria-labelledby="dg-t dg-d">
+              <title id="dg-t">Como as quatro máquinas se ligam</title>
+              <desc id="dg-d">O telemóvel ou o portátil entra na rede privada Tailscale. Daí chega ao mini PC com Proxmox, ao Mac mini e ao PC de trabalho. O PC de trabalho pede texto ao Mac mini e imagem e vídeo ao PC de jogos. O Proxmox faz de ponte para o PC de jogos.</desc>
+              <defs>
+                <linearGradient id="dg-l" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient>
+                <linearGradient id="dg-o" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffa45c"/><stop offset="1" stop-color="#ff5f1f"/></linearGradient>
+                <radialGradient id="dg-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#2dd4bf" stop-opacity=".28"/><stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/></radialGradient>
+              </defs>
+
+              <circle cx="330" cy="240" r="130" fill="url(#dg-glow)"/>
+
+              <!-- ligações (base) -->
+              <g fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1.5">
+                <path d="M190 240H245"/>
+                <path d="M415 240C460 240 455 88 500 88"/>
+                <path d="M415 240H500"/>
+                <path d="M415 240C460 240 455 392 500 392"/>
+                <path d="M750 88C805 88 805 240 860 240"/>
+                <path d="M750 392C805 392 805 240 860 240"/>
+                <path d="M625 344V288"/>
+              </g>
+              <!-- ligações (fluxo animado) -->
+              <g fill="none" stroke-width="2" stroke-linecap="round" class="dg-fluxo">
+                <path d="M190 240H245" stroke="url(#dg-l)"/>
+                <path d="M415 240C460 240 455 88 500 88" stroke="#34d399"/>
+                <path d="M415 240H500" stroke="#34d399"/>
+                <path d="M415 240C460 240 455 392 500 392" stroke="#34d399"/>
+                <path d="M750 88C805 88 805 240 860 240" stroke="#ff8a3d"/>
+                <path d="M750 392C805 392 805 240 860 240" stroke="#ff8a3d"/>
+                <path d="M625 344V288" stroke="#ff8a3d"/>
+              </g>
+
+              <!-- rótulos das ligações -->
+              <g class="dg-rot">
+                <rect x="772" y="132" width="64" height="22" rx="11"/><text x="804" y="147">ponte</text>
+                <rect x="756" y="326" width="96" height="22" rx="11"/><text x="804" y="341">imagem, vídeo</text>
+                <rect x="637" y="305" width="52" height="22" rx="11"/><text x="663" y="320">texto</text>
+              </g>
+
+              <!-- telemóvel -->
+              <g class="dg-no">
+                <rect x="20" y="180" width="170" height="120" rx="18"/>
+                <rect x="40" y="200" width="26" height="44" rx="6" class="dg-ico"/>
+                <rect x="48" y="204" width="10" height="3" rx="1.5" class="dg-ico-f"/>
+                <text x="40" y="270" class="dg-t1">Telemóvel</text>
+                <text x="40" y="288" class="dg-t2">ou portátil, onde estiveres</text>
+              </g>
+
+              <!-- tailscale -->
+              <g class="dg-no dg-no--ts">
+                <rect x="245" y="198" width="170" height="84" rx="42"/>
+                <g transform="translate(270 228)">
+                  <circle cx="4" cy="4" r="3" class="dg-pt"/><circle cx="12" cy="4" r="3" class="dg-pt"/><circle cx="20" cy="4" r="3" class="dg-pt"/>
+                  <circle cx="4" cy="12" r="3" class="dg-pt dg-pt--f"/><circle cx="12" cy="12" r="3" class="dg-pt"/><circle cx="20" cy="12" r="3" class="dg-pt dg-pt--f"/>
+                  <circle cx="4" cy="20" r="3" class="dg-pt dg-pt--f"/><circle cx="12" cy="20" r="3" class="dg-pt dg-pt--f"/><circle cx="20" cy="20" r="3" class="dg-pt dg-pt--f"/>
+                </g>
+                <text x="306" y="237" class="dg-t1">Tailscale</text>
+                <text x="306" y="256" class="dg-t2">rede privada</text>
+              </g>
+
+              <!-- proxmox -->
+              <g class="dg-no">
+                <rect x="500" y="40" width="250" height="96" rx="16"/>
+                <circle cx="526" cy="68" r="4" class="dg-on"/>
+                <text x="540" y="73" class="dg-t1">Mini PC · Proxmox VE 9</text>
+                <text x="526" y="98" class="dg-t2">11 serviços, DNS, automações</text>
+                <text x="526" y="118" class="dg-t3">SEMPRE LIGADO</text>
+              </g>
+
+              <!-- mac -->
+              <g class="dg-no">
+                <rect x="500" y="192" width="250" height="96" rx="16"/>
+                <circle cx="526" cy="220" r="4" class="dg-on"/>
+                <text x="540" y="225" class="dg-t1">Mac mini · M4</text>
+                <text x="526" y="250" class="dg-t2">IA de texto, Qwen 3.5 9B</text>
+                <text x="526" y="270" class="dg-t3">SEMPRE LIGADO</text>
+              </g>
+
+              <!-- trabalho -->
+              <g class="dg-no">
+                <rect x="500" y="344" width="250" height="96" rx="16"/>
+                <circle cx="526" cy="372" r="4" class="dg-dorme"/>
+                <text x="540" y="377" class="dg-t1">PC de trabalho</text>
+                <text x="526" y="402" class="dg-t2">agentes, estúdio, apps · 8 GB</text>
+                <text x="526" y="422" class="dg-t3">DORME DE MADRUGADA</text>
+              </g>
+
+              <!-- jogos -->
+              <g class="dg-no dg-no--gpu">
+                <rect x="860" y="180" width="240" height="120" rx="18"/>
+                <circle cx="886" cy="210" r="4" class="dg-dorme"/>
+                <text x="900" y="215" class="dg-t1">PC de jogos</text>
+                <text x="886" y="240" class="dg-t2">imagem, vídeo, voz, transcrição</text>
+                <rect x="886" y="256" width="184" height="24" rx="12" class="dg-chip"/>
+                <text x="978" y="272" class="dg-chipt">RTX 4070 Ti SUPER · 16 GB</text>
+              </g>
+            </svg>
+
+            <!-- versão vertical para telemóvel -->
+            <svg class="dg-movel" viewBox="0 0 360 650" role="img" aria-labelledby="dgm-t dgm-d">
+              <title id="dgm-t">Como as quatro máquinas se ligam</title>
+              <desc id="dgm-d">O telemóvel entra na rede privada Tailscale, que chega ao mini PC com Proxmox, ao Mac mini e ao PC de trabalho. O PC de trabalho pede texto ao Mac mini e imagem e vídeo ao PC de jogos. O Proxmox faz de ponte para o PC de jogos.</desc>
+              <defs>
+                <radialGradient id="dgm-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#2dd4bf" stop-opacity=".28"/><stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/></radialGradient>
+              </defs>
+              <circle cx="180" cy="138" r="90" fill="url(#dgm-glow)"/>
+              <g fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1.5">
+                <path d="M180 74V110"/>
+                <path d="M180 166C180 190 24 178 24 206V455"/>
+                <path d="M24 239H44M24 347H44M24 455H44"/>
+                <path d="M316 239H336V580H316"/>
+                <path d="M180 494V530"/>
+                <path d="M260 416V386"/>
+              </g>
+              <g fill="none" stroke-width="2" stroke-linecap="round" class="dg-fluxo">
+                <path d="M180 74V110" stroke="#34d399"/>
+                <path d="M180 166C180 190 24 178 24 206V455" stroke="#34d399"/>
+                <path d="M24 239H44M24 347H44M24 455H44" stroke="#34d399"/>
+                <path d="M316 239H336V580H316" stroke="#ff8a3d"/>
+                <path d="M180 494V530" stroke="#ff8a3d"/>
+                <path d="M260 416V386" stroke="#ff8a3d"/>
+              </g>
+              <g class="dg-rot">
+                <rect x="312" y="284" width="46" height="18" rx="9"/><text x="335" y="297">ponte</text>
+                <rect x="190" y="503" width="92" height="18" rx="9"/><text x="236" y="516">imagem, vídeo</text>
+                <rect x="196" y="392" width="54" height="18" rx="9"/><text x="223" y="405">texto</text>
+              </g>
+              <g class="dg-no">
+                <rect x="95" y="10" width="170" height="64" rx="16"/>
+                <rect x="113" y="25" width="18" height="32" rx="4.5" class="dg-ico"/>
+                <text x="143" y="40" class="dg-t1">Telemóvel</text>
+                <text x="143" y="58" class="dg-t2">ou portátil</text>
+              </g>
+              <g class="dg-no dg-no--ts">
+                <rect x="95" y="110" width="170" height="56" rx="28"/>
+                <g transform="translate(118 128)">
+                  <circle cx="3" cy="3" r="2.4" class="dg-pt"/><circle cx="10" cy="3" r="2.4" class="dg-pt"/><circle cx="17" cy="3" r="2.4" class="dg-pt"/>
+                  <circle cx="3" cy="10" r="2.4" class="dg-pt dg-pt--f"/><circle cx="10" cy="10" r="2.4" class="dg-pt"/><circle cx="17" cy="10" r="2.4" class="dg-pt dg-pt--f"/>
+                  <circle cx="3" cy="17" r="2.4" class="dg-pt dg-pt--f"/><circle cx="10" cy="17" r="2.4" class="dg-pt dg-pt--f"/><circle cx="17" cy="17" r="2.4" class="dg-pt dg-pt--f"/>
+                </g>
+                <text x="148" y="136" class="dg-t1">Tailscale</text>
+                <text x="148" y="154" class="dg-t2">rede privada</text>
+              </g>
+              <g class="dg-no">
+                <rect x="44" y="200" width="272" height="78" rx="14"/>
+                <circle cx="64" cy="222" r="4" class="dg-on"/>
+                <text x="76" y="227" class="dg-t1">Mini PC · Proxmox VE 9</text>
+                <text x="60" y="248" class="dg-t2">11 serviços, DNS, automações</text>
+                <text x="60" y="266" class="dg-t3">SEMPRE LIGADO</text>
+              </g>
+              <g class="dg-no">
+                <rect x="44" y="308" width="272" height="78" rx="14"/>
+                <circle cx="64" cy="330" r="4" class="dg-on"/>
+                <text x="76" y="335" class="dg-t1">Mac mini · M4</text>
+                <text x="60" y="356" class="dg-t2">IA de texto, Qwen 3.5 9B</text>
+                <text x="60" y="374" class="dg-t3">SEMPRE LIGADO</text>
+              </g>
+              <g class="dg-no">
+                <rect x="44" y="416" width="272" height="78" rx="14"/>
+                <circle cx="64" cy="438" r="4" class="dg-dorme"/>
+                <text x="76" y="443" class="dg-t1">PC de trabalho</text>
+                <text x="60" y="464" class="dg-t2">agentes, estúdio, apps · 8 GB</text>
+                <text x="60" y="482" class="dg-t3">DORME DE MADRUGADA</text>
+              </g>
+              <g class="dg-no dg-no--gpu">
+                <rect x="44" y="530" width="272" height="100" rx="16"/>
+                <circle cx="64" cy="553" r="4" class="dg-dorme"/>
+                <text x="76" y="558" class="dg-t1">PC de jogos</text>
+                <text x="60" y="580" class="dg-t2">imagem, vídeo, voz, transcrição</text>
+                <rect x="60" y="594" width="184" height="22" rx="11" class="dg-chip"/>
+                <text x="152" y="609" class="dg-chipt">RTX 4070 Ti SUPER · 16 GB</text>
+              </g>
+            </svg>
+          </div>
+          <figcaption>Todas as semanas, o Proxmox faz backup para um disco do PC de trabalho. Um backup no mesmo disco não é backup.</figcaption>
+        </figure>
+
+        <ul class="principios">
+          <li class="rv">
+            <h3>Local primeiro</h3>
+            <p>Se dá para correr em casa, corre em casa. A nuvem fica para o que não cabe.</p>
+          </li>
+          <li class="rv">
+            <h3>Nada exposto</h3>
+            <p>Rede privada para entrar e nenhuma porta aberta no router.</p>
+          </li>
+          <li class="rv">
+            <h3>Vigia-se sozinho</h3>
+            <p>Se um serviço cai, volta a arrancar e avisa-nos.</p>
+          </li>
+          <li class="rv">
+            <h3>Os PCs dormem</h3>
+            <p>Desligam de madrugada quando ninguém os usa e ligam sozinhos de manhã.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ ESTÚDIO ============ -->
     <section id="estudio" class="seccao seccao--estudio" aria-labelledby="estudio-titulo">
       <div class="envolve">
-        <p class="etiqueta etiqueta--laranja">Em destaque</p>
-        <h2 id="estudio-titulo">KCU Estúdio</h2>
-        <p class="intro">O nosso estúdio de vídeo com IA, a correr no nosso próprio PC. Filmes longos, shorts, o teu canal e ebooks: da ideia ao vídeo pronto a publicar. <em>É só uma montra: o código não é público.</em></p>
-        <figure class="figura figura--grande">
-          <img src="img/estudio-inicio.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Ecrã inicial do KCU Estúdio: resumo do dia, passos para começar e atalhos para os estúdios Dark, Copy &amp; Paste, Pessoal e Editor.">
-          <figcaption>O início: tudo o que se passa no Estúdio num só ecrã.</figcaption>
-        </figure>
-        <ul class="grelha grelha--3">
-          <li class="cartao cartao--img">
-            <img src="img/estudio-dark.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Estúdio Dark do KCU Estúdio, com as etapas de um filme longo.">
-            <h3>🌑 Dark</h3>
-            <p>Filmes longos, da ideia ao envio em 14 etapas, cada uma fechada com prova real.</p>
-          </li>
-          <li class="cartao cartao--img">
-            <img src="img/estudio-copy-paste.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Estúdio Copy &amp; Paste do KCU Estúdio, com a lista de vídeos virais encontrados.">
-            <h3>🔁 Copy &amp; Paste</h3>
-            <p>Encontra os vídeos que mais rebentaram e ajuda-te a refazê-los com a tua marca.</p>
-          </li>
-          <li class="cartao cartao--img">
-            <img src="img/estudio-pessoal.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Estúdio Pessoal do KCU Estúdio, com o molde de edição de um canal.">
-            <h3>🙋 Pessoal</h3>
-            <p>Tu gravas e o Estúdio edita com o teu molde: corta as pausas, legenda e segue o ritmo.</p>
-          </li>
-        </ul>
-        <a class="ligacao" href="https://github.com/KCUServices/kcu-estudio">Ver a montra no GitHub <span aria-hidden="true">→</span></a>
+        <div class="estudio">
+          <input class="vh" type="radio" name="ecra" id="e-inicio" checked>
+          <input class="vh" type="radio" name="ecra" id="e-dark">
+          <input class="vh" type="radio" name="ecra" id="e-copy">
+          <input class="vh" type="radio" name="ecra" id="e-pessoal">
+
+          <div class="estudio__texto rv">
+            <p class="olho"><span class="ponto ponto--laranja"></span>Em destaque · KCU Estúdio</p>
+            <h2 id="estudio-titulo">Um estúdio de vídeo com IA, a correr no nosso PC.</h2>
+            <p class="estudio__lead">Filmes longos, shorts, o teu canal e ebooks, da ideia ao vídeo pronto a publicar. Uma ferramenta em vez de dez, sem mensalidades.</p>
+
+            <div class="separadores" role="group" aria-label="Escolhe o ecrã do Estúdio">
+              <label for="e-inicio" class="sep">
+                <span class="sep__t">Início</span>
+                <span class="sep__d">Tudo o que se passa no Estúdio, num só ecrã.</span>
+              </label>
+              <label for="e-dark" class="sep">
+                <span class="sep__t">Dark</span>
+                <span class="sep__d">Filmes longos em 14 etapas, cada uma fechada com prova real.</span>
+              </label>
+              <label for="e-copy" class="sep">
+                <span class="sep__t">Copy &amp; Paste</span>
+                <span class="sep__d">Os vídeos que mais rebentaram, refeitos com a tua marca.</span>
+              </label>
+              <label for="e-pessoal" class="sep">
+                <span class="sep__t">Pessoal</span>
+                <span class="sep__d">Tu gravas, ele edita com o teu molde: cortes, legendas, ritmo.</span>
+              </label>
+            </div>
+
+            <p class="aviso"><svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-cadeado"/></svg>Só montra: o código do Estúdio não é público.</p>
+            <a class="ligacao" href="https://github.com/KCUServices/kcu-estudio">Ver a montra no GitHub <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          </div>
+
+          <div class="estudio__palco rv">
+            <div class="estudio__brilho" aria-hidden="true"></div>
+            <div class="browser browser--estudio">
+              <div class="browser__barra" aria-hidden="true">
+                <span class="browser__pontos"><i></i><i></i><i></i></span>
+                <span class="browser__url"><svg width="12" height="12"><use href="#i-cadeado"/></svg>KCU Estúdio</span>
+                <span class="browser__fim"></span>
+              </div>
+              <div class="ecras">
+                <img class="ecra ecra--inicio" src="img/estudio-inicio.webp" width="1440" height="900" loading="lazy" decoding="async" alt="Início do KCU Estúdio: resumo do dia, passos para começar e atalhos para os estúdios.">
+                <img class="ecra ecra--dark" src="img/estudio-dark.webp" width="1440" height="900" loading="lazy" decoding="async" alt="Estúdio Dark: começar um filme novo, em modo completo de 14 etapas, rápido ou a partir de ideias.">
+                <img class="ecra ecra--copy" src="img/estudio-copy-paste.webp" width="1440" height="900" loading="lazy" decoding="async" alt="Estúdio Copy &amp; Paste: a lista dos vídeos virais encontrados numa página, prontos a refazer.">
+                <img class="ecra ecra--pessoal" src="img/estudio-pessoal.webp" width="1440" height="900" loading="lazy" decoding="async" alt="Estúdio Pessoal: o molde de edição de um canal, com ritmo de cortes, pausas e legendas.">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- ============ PRODUTOS ============ -->
     <section id="produtos" class="seccao" aria-labelledby="produtos-titulo">
       <div class="envolve">
-        <h2 id="produtos-titulo">Produtos</h2>
-        <p class="intro">Estes não estão no GitHub. Estão na loja KCU Services na Whop.</p>
-        <ul class="grelha grelha--produtos">
-          <li class="cartao cartao--produto">
-            <img src="img/produto-pihole.webp" width="692" height="350" loading="lazy" decoding="async" alt="Escudo verde a proteger uma casa e os seus aparelhos.">
-            <h3>🛡️ Pi-hole anti-apostas</h3>
-            <p>Fecha a porta às apostas e à pornografia na casa toda.</p>
-            <a class="botao botao--verde" href="https://whop.com/kcu-services/kcu-pihole-anti-apostas/">Ver na loja<span class="vh">: Pi-hole anti-apostas</span></a>
+        <header class="cabeca rv">
+          <div>
+            <p class="olho"><span class="ponto ponto--verde"></span>Produtos · na loja da Whop</p>
+            <h2 id="produtos-titulo">O que não cabe num repositório.</h2>
+          </div>
+          <p class="cabeca__lead">Listas, guias passo a passo e ajuda de quem já montou tudo isto em casa. Ficam na loja KCU Services.</p>
+        </header>
+
+        <ul class="produtos">
+          <li class="produto produto--grande rv">
+            <div class="produto__img"><img src="img/produto-pihole.webp" width="692" height="350" loading="lazy" decoding="async" alt="Escudo verde a proteger uma casa e os seus aparelhos, à noite, junto à água."></div>
+            <div class="produto__corpo">
+              <p class="produto__cat">Rede da casa</p>
+              <h3>Pi-hole anti-apostas</h3>
+              <p>Fecha a porta às apostas e à pornografia na casa toda.</p>
+              <a class="produto__link esticado" href="https://whop.com/kcu-services/kcu-pihole-anti-apostas/">Ver na loja<span class="vh">: Pi-hole anti-apostas</span> <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-fora"/></svg></a>
+            </div>
           </li>
-          <li class="cartao cartao--produto">
-            <img src="img/produto-playbook.webp" width="692" height="350" loading="lazy" decoding="async" alt="Cadeado azul à frente de um servidor dentro de uma nuvem.">
-            <h3>🔒 Playbook de Proteção</h3>
-            <p>Blinda o teu servidor sem expor uma única porta.</p>
-            <a class="botao botao--verde" href="https://whop.com/kcu-services/kcu-playbook-protecao/">Ver na loja<span class="vh">: Playbook de Proteção</span></a>
+          <li class="produto produto--grande rv">
+            <div class="produto__img"><img src="img/produto-playbook.webp" width="692" height="350" loading="lazy" decoding="async" alt="Cadeado azul à frente de um servidor dentro de uma nuvem."></div>
+            <div class="produto__corpo">
+              <p class="produto__cat">Servidor</p>
+              <h3>Playbook de Proteção</h3>
+              <p>Blinda o teu servidor sem expor uma única porta.</p>
+              <a class="produto__link esticado" href="https://whop.com/kcu-services/kcu-playbook-protecao/">Ver na loja<span class="vh">: Playbook de Proteção</span> <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-fora"/></svg></a>
+            </div>
           </li>
-          <li class="cartao cartao--produto">
-            <img src="img/produto-checklist.webp" width="692" height="350" loading="lazy" decoding="async" alt="Prancheta com uma lista de verificação por cima de um servidor.">
-            <h3>✅ Checklist de Segurança do Servidor</h3>
-            <p>Os 10 passos, em lista de ação.</p>
-            <a class="botao botao--verde" href="https://whop.com/kcu-services/kcu-checklist-seguranca-servidor/">Ver na loja<span class="vh">: Checklist de Segurança do Servidor</span></a>
+          <li class="produto rv">
+            <div class="produto__img"><img src="img/produto-checklist.webp" width="692" height="350" loading="lazy" decoding="async" alt="Prancheta com uma lista de verificação por cima de um servidor."></div>
+            <div class="produto__corpo">
+              <p class="produto__cat">Servidor</p>
+              <h3>Checklist de Segurança do Servidor</h3>
+              <p>Os 10 passos, em lista de ação.</p>
+              <a class="produto__link esticado" href="https://whop.com/kcu-services/kcu-checklist-seguranca-servidor/">Ver na loja<span class="vh">: Checklist de Segurança do Servidor</span> <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-fora"/></svg></a>
+            </div>
           </li>
-          <li class="cartao cartao--produto">
-            <img src="img/produto-piggy.webp" width="692" height="350" loading="lazy" decoding="async" alt="Mealheiro em forma de porco ao lado de um caderno de notas.">
-            <h3>🐷 PIGGY + LifeOS</h3>
-            <p>As tuas finanças e as tuas notas, sem as entregar a ninguém.</p>
-            <a class="botao botao--verde" href="https://whop.com/kcu-services/kcu-piggy-lifeos/">Ver na loja<span class="vh">: PIGGY + LifeOS</span></a>
+          <li class="produto rv">
+            <div class="produto__img"><img src="img/produto-piggy.webp" width="692" height="350" loading="lazy" decoding="async" alt="Mealheiro em forma de porco ao lado de um caderno de notas."></div>
+            <div class="produto__corpo">
+              <p class="produto__cat">Finanças e notas</p>
+              <h3>PIGGY + LifeOS</h3>
+              <p>As tuas finanças e as tuas notas, sem as entregar a ninguém.</p>
+              <a class="produto__link esticado" href="https://whop.com/kcu-services/kcu-piggy-lifeos/">Ver na loja<span class="vh">: PIGGY + LifeOS</span> <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-fora"/></svg></a>
+            </div>
           </li>
-          <li class="cartao cartao--produto">
-            <img src="img/produto-assistencia.webp" width="692" height="350" loading="lazy" decoding="async" alt="Portátil com um cursor e um balão de conversa.">
-            <h3>🤝 Assistência KCU</h3>
-            <p>Não sabes por onde começar? Começamos contigo.</p>
-            <a class="botao botao--verde" href="https://whop.com/kcu-services/kcu-assistencia/">Ver na loja<span class="vh">: Assistência KCU</span></a>
+          <li class="produto rv">
+            <div class="produto__img"><img src="img/produto-assistencia.webp" width="692" height="350" loading="lazy" decoding="async" alt="Portátil com um cursor e um balão de conversa."></div>
+            <div class="produto__corpo">
+              <p class="produto__cat">Acompanhamento</p>
+              <h3>Assistência KCU</h3>
+              <p>Não sabes por onde começar? Começamos contigo.</p>
+              <a class="produto__link esticado" href="https://whop.com/kcu-services/kcu-assistencia/">Ver na loja<span class="vh">: Assistência KCU</span> <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-fora"/></svg></a>
+            </div>
           </li>
         </ul>
       </div>
     </section>
 
-    <section id="comunidade" class="seccao" aria-labelledby="comunidade-titulo">
+    <!-- ============ COMUNIDADE ============ -->
+    <section id="comunidade" class="seccao seccao--cta" aria-labelledby="comunidade-titulo">
       <div class="envolve">
-        <h2 id="comunidade-titulo">Comunidade</h2>
-        <p class="intro">As tuas ideias decidem o que melhora a seguir. As que entram ficam no registo de alterações com o teu nome.</p>
-        <ul class="grelha grelha--3">
-          <li class="cartao">
-            <h3><span aria-hidden="true">💡</span> Discussions</h3>
-            <p>Ideias, perguntas e o teu setup, no GitHub. Se algo não funciona, abre uma <em>issue</em> no repositório da ferramenta.</p>
-            <a class="ligacao" href="https://github.com/orgs/KCUServices/discussions">Entrar na conversa <span aria-hidden="true">→</span></a>
-          </li>
-          <li class="cartao">
-            <h3><span aria-hidden="true">📸</span> Instagram</h3>
-            <p>Novidades, bastidores e avisos quando algo novo sai.</p>
-            <a class="ligacao" href="https://www.instagram.com/kcu.services">@kcu.services <span aria-hidden="true">→</span></a>
-          </li>
-          <li class="cartao">
-            <h3><span aria-hidden="true">🛒</span> Loja</h3>
-            <p>Todos os produtos KCU Services num só sítio, na Whop.</p>
-            <a class="ligacao" href="https://whop.com/kcu-services/">Abrir a loja <span aria-hidden="true">→</span></a>
-          </li>
-        </ul>
+        <div class="cta rv">
+          <div class="cta__brilho" aria-hidden="true"></div>
+          <div class="cta__texto">
+            <p class="olho"><span class="ponto ponto--laranja"></span>Vídeos sem cortes</p>
+            <h2 id="comunidade-titulo">Tu dizes o que falta. Nós melhoramos à frente de toda a gente.</h2>
+            <p>Cada ferramenta é usada e melhorada em vídeo, sem cortes. As ideias que entram ficam no registo de alterações com o teu nome, e cada episódio tem a sua versão do código.</p>
+            <p class="cta__cmd" aria-label="Exemplo: git checkout ep01"><span aria-hidden="true">$</span> git checkout <b>ep01</b></p>
+            <div class="botoes">
+              <a class="botao botao--laranja" href="https://github.com/orgs/KCUServices/discussions/categories/ideas">Deixar uma ideia <svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-seta"/></svg></a>
+            </div>
+          </div>
+          <ul class="canais">
+            <li>
+              <a class="canal" href="https://github.com/orgs/KCUServices/discussions">
+                <span class="canal__ico"><svg width="20" height="20" aria-hidden="true"><use href="#i-balao"/></svg></span>
+                <span class="canal__txt"><b>Discussions</b><span>Ideias, perguntas e o teu setup</span></span>
+                <svg class="ico canal__seta" width="16" height="16" aria-hidden="true"><use href="#i-fora"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="canal" href="https://www.instagram.com/kcu.services">
+                <span class="canal__ico"><svg width="20" height="20" aria-hidden="true"><use href="#i-camara"/></svg></span>
+                <span class="canal__txt"><b>Instagram</b><span>@kcu.services · bastidores e novidades</span></span>
+                <svg class="ico canal__seta" width="16" height="16" aria-hidden="true"><use href="#i-fora"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="canal" href="https://whop.com/kcu-services/">
+                <span class="canal__ico"><svg width="20" height="20" aria-hidden="true"><use href="#i-saco"/></svg></span>
+                <span class="canal__txt"><b>Loja</b><span>Todos os produtos KCU Services</span></span>
+                <svg class="ico canal__seta" width="16" height="16" aria-hidden="true"><use href="#i-fora"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PERGUNTAS ============ -->
+    <section id="perguntas" class="seccao" aria-labelledby="perguntas-titulo">
+      <div class="envolve faq">
+        <header class="faq__cabeca rv">
+          <p class="olho"><span class="ponto ponto--verde"></span>Perguntas</p>
+          <h2 id="perguntas-titulo">Antes de começares.</h2>
+          <p>Não encontras a resposta? Pergunta nas <a href="https://github.com/orgs/KCUServices/discussions">Discussions</a>.</p>
+        </header>
+        <div class="faq__lista rv">
+          <details>
+            <summary>É grátis?</summary>
+            <div class="faq__resp">
+              <p>O código aberto é grátis para uso pessoal: kcu-window, kcu-stack, kcu-automaticos e kcu-ia-local. Os produtos da loja são pagos e o KCU Estúdio é só uma montra.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Posso vender isto ou usá-lo no meu negócio?</summary>
+            <div class="faq__resp">
+              <p>Não sem falar connosco. O código e a documentação estão sob a licença <a href="https://polyformproject.org/licenses/noncommercial/1.0.0">PolyForm Noncommercial 1.0.0</a>: usar, estudar, alterar e partilhar para uso pessoal, à vontade. Para vender ou usar num negócio, fala connosco no <a href="https://www.instagram.com/kcu.services">Instagram</a>.</p>
+              <p>O nome KCU, os logótipos e as imagens ficam de fora da licença. Se adaptares uma ferramenta, dá-lhe outro nome.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Preciso de um PC potente?</summary>
+            <div class="faq__resp">
+              <p>Não. Começa com uma máquina: um mini PC com Proxmox já te dá a página inicial, o Pi-hole e as automações. Os scripts do kcu-automaticos correm em qualquer Windows 10 ou 11.</p>
+              <p>A IA pede mais: a transcrição precisa de cerca de 4 GB de memória na placa, o Qwen de 7 a 8 GB (ou um Mac com 16 GB) e o vídeo com o Wan 2.2 fica bem a partir de 16 GB.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Como peço ajuda?</summary>
+            <div class="faq__resp">
+              <p>Para dúvidas e ideias, usa as <a href="https://github.com/orgs/KCUServices/discussions">Discussions</a>. Se algo não funciona, abre uma <em>issue</em> no repositório da ferramenta. Se queres tudo montado no teu setup sem perder fins de semana, há a <a href="https://whop.com/kcu-services/kcu-assistencia/">Assistência KCU</a>.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Posso abrir estas ferramentas à internet?</summary>
+            <div class="faq__resp">
+              <p>Não deves. Usa uma rede privada como a Tailscale, como nós fazemos. O kcu-window, por exemplo, dá controlo total da app a quem entra.</p>
+            </div>
+          </details>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="rodape">
     <div class="envolve">
-      <p>O código e a documentação dos repositórios estão sob a licença <a href="https://polyformproject.org/licenses/noncommercial/1.0.0">PolyForm Noncommercial 1.0.0</a>: uso pessoal à vontade; para vender ou usar num negócio, fala connosco.</p>
-      <p>O nome KCU, os logótipos e as imagens dos produtos são da KCU Services, com todos os direitos reservados. <a href="https://github.com/KCUServices/.github/blob/main/MARCA.md">Marca e imagens</a>.</p>
-      <p class="rodape__fim">© 2026 KCU Services · Este site não usa cookies nem rastreadores.</p>
+      <div class="rodape__topo">
+        <div class="rodape__marca">
+          <a class="marca" href="#conteudo" aria-label="KCU Services, voltar ao início">
+            <img src="favicon.svg" alt="" width="30" height="30" loading="lazy">
+            <span>KCU Services</span>
+          </a>
+          <p>Segurança, rede, IA local e as apps que usamos em casa, em código aberto para uso pessoal.</p>
+        </div>
+        <nav class="rodape__cols" aria-label="Rodapé">
+          <div>
+            <h2>Código</h2>
+            <ul>
+              <li><a href="https://github.com/KCUServices/kcu-window">kcu-window</a></li>
+              <li><a href="https://github.com/KCUServices/kcu-stack">kcu-stack</a></li>
+              <li><a href="https://github.com/KCUServices/kcu-automaticos">kcu-automaticos</a></li>
+              <li><a href="https://github.com/KCUServices/kcu-ia-local">kcu-ia-local</a></li>
+              <li><a href="https://github.com/KCUServices/kcu-estudio">KCU Estúdio (montra)</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Produtos</h2>
+            <ul>
+              <li><a href="https://whop.com/kcu-services/kcu-pihole-anti-apostas/">Pi-hole anti-apostas</a></li>
+              <li><a href="https://whop.com/kcu-services/kcu-playbook-protecao/">Playbook de Proteção</a></li>
+              <li><a href="https://whop.com/kcu-services/kcu-checklist-seguranca-servidor/">Checklist de Segurança</a></li>
+              <li><a href="https://whop.com/kcu-services/kcu-piggy-lifeos/">PIGGY + LifeOS</a></li>
+              <li><a href="https://whop.com/kcu-services/kcu-assistencia/">Assistência KCU</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Comunidade</h2>
+            <ul>
+              <li><a href="https://github.com/orgs/KCUServices/discussions">Discussions</a></li>
+              <li><a href="https://www.instagram.com/kcu.services">Instagram</a></li>
+              <li><a href="https://whop.com/kcu-services/">Loja</a></li>
+              <li><a href="https://github.com/KCUServices">GitHub</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="rodape__base">
+        <p>O código e a documentação dos repositórios estão sob a licença <a href="https://polyformproject.org/licenses/noncommercial/1.0.0">PolyForm Noncommercial 1.0.0</a>.</p>
+        <p>O nome KCU, os logótipos e as imagens dos produtos são da KCU Services, com todos os direitos reservados. <a href="https://github.com/KCUServices/.github/blob/main/MARCA.md">Marca e imagens</a>.</p>
+        <p class="rodape__fim"><span>© 2026 KCU Services</span><span>Este site não usa cookies nem rastreadores.</span></p>
+      </div>
     </div>
   </footer>
 </body>
