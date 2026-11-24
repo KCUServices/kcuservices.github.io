@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
   <link rel="preload" href="fontes/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="img/estudio-inicio.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="estilo.css?v=2">
+  <link rel="stylesheet" href="estilo.css?v=3">
   <script src="app.js?v=2" defer></script>
 
   <meta property="og:type" content="website">
@@ -304,6 +304,38 @@
               </svg>
             </div>
             <a class="tile__link esticado" href="https://github.com/KCUServices/kcu-stack">Ver o kcu-stack no GitHub <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          </article>
+
+          <!-- kcu-automacoes -->
+          <article class="tile tile--largo tile--total tile--auto rv">
+            <div class="tile__texto">
+              <p class="tile__repo"><svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-ramo"/></svg>kcu-automacoes</p>
+              <h3>Automações que trabalham por nós, mas nunca decidem por nós.</h3>
+              <p>A IA lê um pedido no GitHub e prepara a correção, o n8n prepara publicações e vigia o que é público, os webhooks chegam mesmo com o site protegido. O que importa espera por um botão no Discord.</p>
+              <ul class="factos">
+                <li>Botões Aprovar / Recusar</li>
+                <li>Issue → IA → pull request</li>
+                <li>Cloudflare Worker</li>
+                <li>n8n</li>
+              </ul>
+            </div>
+            <div class="tile__arte" aria-hidden="true">
+              <div class="aprova">
+                <ol class="aprova__fluxo">
+                  <li>Pedido no GitHub</li>
+                  <li>A IA analisa</li>
+                  <li>Pull request pronto</li>
+                  <li class="aprova__agora">Espera por ti</li>
+                </ol>
+                <div class="aprova__cartao">
+                  <p class="aprova__canal"># melhorias</p>
+                  <p class="aprova__titulo">Melhoria pronta para aprovar</p>
+                  <p class="aprova__linha">Corrige o atalho que não abria em ecrã inteiro. 2 ficheiros, testes a verde.</p>
+                  <div class="aprova__botoes"><span class="aprova__sim">Aprovar</span><span class="aprova__nao">Recusar</span><span class="aprova__ver">Ver PR</span></div>
+                </div>
+              </div>
+            </div>
+            <a class="tile__link esticado" href="https://github.com/KCUServices/kcu-automacoes">Ver o kcu-automacoes no GitHub <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-seta"/></svg></a>
           </article>
         </div>
       </div>
@@ -691,7 +723,7 @@
           <details>
             <summary>É grátis?</summary>
             <div class="faq__resp">
-              <p>O código aberto é grátis para uso pessoal: kcu-window, kcu-stack, kcu-automaticos e kcu-ia-local. Os produtos da loja são pagos e o KCU Estúdio é só uma montra.</p>
+              <p>O código aberto é grátis para uso pessoal: kcu-window, kcu-stack, kcu-automaticos, kcu-ia-local e kcu-automacoes. Os produtos da loja são pagos e o KCU Estúdio é só uma montra.</p>
             </div>
           </details>
           <details>
@@ -743,6 +775,7 @@
               <li><a href="https://github.com/KCUServices/kcu-stack">kcu-stack</a></li>
               <li><a href="https://github.com/KCUServices/kcu-automaticos">kcu-automaticos</a></li>
               <li><a href="https://github.com/KCUServices/kcu-ia-local">kcu-ia-local</a></li>
+              <li><a href="https://github.com/KCUServices/kcu-automacoes">kcu-automacoes</a></li>
               <li><a href="https://github.com/KCUServices/kcu-estudio">KCU Estúdio (montra)</a></li>
             </ul>
           </div>
