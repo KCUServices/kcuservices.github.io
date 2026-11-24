@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KCU Services · Segurança, rede e apps que usamos em casa</title>
+  <meta name="description" content="Ferramentas que construímos para o nosso dia a dia: código aberto para uso pessoal, o KCU Estúdio e produtos de segurança e rede para a tua casa.">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://kcuservices.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="estilo.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="KCU Services">
+  <meta property="og:title" content="KCU Services · Segurança, rede e apps que usamos em casa">
+  <meta property="og:description" content="Ferramentas que construímos para o nosso dia a dia, mostradas em vídeos sem cortes.">
+  <meta property="og:url" content="https://kcuservices.github.io/">
+  <meta property="og:image" content="https://kcuservices.github.io/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ecrã inicial do KCU Estúdio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KCU Services · Segurança, rede e apps que usamos em casa">
+  <meta name="twitter:description" content="Ferramentas que construímos para o nosso dia a dia, mostradas em vídeos sem cortes.">
+  <meta name="twitter:image" content="https://kcuservices.github.io/img/og.jpg">
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+  <header class="topo">
+    <div class="envolve topo__linha">
+      <a class="marca" href="#" aria-label="KCU Services, início">
+        <img src="favicon.svg" alt="" width="32" height="32">
+        <span>KCU Services</span>
+      </a>
+      <nav aria-label="Secções">
+        <ul class="menu">
+          <li><a href="#codigo">Código aberto</a></li>
+          <li><a href="#estudio">Estúdio</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#comunidade">Comunidade</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi">
+      <div class="envolve">
+        <p class="etiqueta">KCU Services</p>
+        <h1>Segurança, rede e apps que usamos em casa.</h1>
+        <p class="heroi__texto">Aqui ficam as ferramentas que construímos para o nosso próprio dia a dia, e a forma como montámos tudo. Fazemos isto à frente de toda a gente, em <strong>vídeos sem cortes</strong>: tu dizes o que falta e nós melhoramos.</p>
+        <div class="botoes">
+          <a class="botao botao--laranja" href="#codigo">Ver o código aberto</a>
+          <a class="botao botao--vidro" href="#produtos">Ver os produtos</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="codigo" class="seccao" aria-labelledby="codigo-titulo">
+      <div class="envolve">
+        <h2 id="codigo-titulo">Código aberto <span class="sub">(grátis para uso pessoal)</span></h2>
+        <p class="intro">Pega, aprende e adapta ao teu. São as mesmas ferramentas que usamos todos os dias, limpas de tudo o que é nosso.</p>
+        <ul class="grelha grelha--2">
+          <li class="cartao">
+            <h3><span aria-hidden="true">🪟</span> kcu-window</h3>
+            <p>Abre uma app do teu PC Windows no browser (telemóvel ou outro PC), sem ambiente de trabalho remoto. Mostra só a janela dessa app.</p>
+            <a class="ligacao" href="https://github.com/KCUServices/kcu-window">Ver no GitHub <span aria-hidden="true">→</span></a>
+          </li>
+          <li class="cartao">
+            <h3><span aria-hidden="true">🧱</span> kcu-stack</h3>
+            <p>O nosso setup completo: máquinas, Proxmox, IA e as apps que usamos todos os dias, com as definições que funcionam e o porquê de cada escolha.</p>
+            <a class="ligacao" href="https://github.com/KCUServices/kcu-stack">Ver no GitHub <span aria-hidden="true">→</span></a>
+          </li>
+          <li class="cartao">
+            <h3><span aria-hidden="true">⚙️</span> kcu-automaticos</h3>
+            <p>Os scripts que mantêm os nossos PCs Windows a funcionar sozinhos: limpar a RAM, desligar à noite, manutenção e vigia de serviços.</p>
+            <a class="ligacao" href="https://github.com/KCUServices/kcu-automaticos">Ver no GitHub <span aria-hidden="true">→</span></a>
+          </li>
+          <li class="cartao">
+            <h3><span aria-hidden="true">🤖</span> kcu-ia-local</h3>
+            <p>IA a correr em casa: transcrição compatível com a API da OpenAI, Qwen em português de Portugal no Ollama e um pipeline imagem → vídeo no ComfyUI.</p>
+            <a class="ligacao" href="https://github.com/KCUServices/kcu-ia-local">Ver no GitHub <span aria-hidden="true">→</span></a>
+          </li>
+        </ul>
+        <figure class="figura">
+          <img src="img/stack-homepage.webp" width="1200" height="660" loading="lazy" decoding="async" alt="Página inicial do homelab descrito no kcu-stack, com cartões para o Proxmox, memória, processador, rede e serviços como Portainer, Pi-hole, n8n e Uptime Kuma.">
+          <figcaption>A página inicial do nosso homelab, explicada peça a peça no kcu-stack.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="estudio" class="seccao seccao--estudio" aria-labelledby="estudio-titulo">
+      <div class="envolve">
+        <p class="etiqueta etiqueta--laranja">Em destaque</p>
+        <h2 id="estudio-titulo">KCU Estúdio</h2>
+        <p class="intro">O nosso estúdio de vídeo com IA, a correr no nosso próprio PC. Filmes longos, shorts, o teu canal e ebooks: da ideia ao vídeo pronto a publicar. <em>É só uma montra: o código não é público.</em></p>
+        <figure class="figura figura--grande">
+          <img src="img/estudio-inicio.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Ecrã inicial do KCU Estúdio: resumo do dia, passos para começar e atalhos para os estúdios Dark, Copy &amp; Paste, Pessoal e Editor.">
+          <figcaption>O início: tudo o que se passa no Estúdio num só ecrã.</figcaption>
+        </figure>
+        <ul class="grelha grelha--3">
+          <li class="cartao cartao--img">
+            <img src="img/estudio-dark.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Estúdio Dark do KCU Estúdio, com as etapas de um filme longo.">
+            <h3>🌑 Dark</h3>
+            <p>Filmes longos, da ideia ao envio em 14 etapas, cada uma fechada com prova real.</p>
+          </li>
+          <li class="cartao cartao--img">
+            <img src="img/estudio-copy-paste.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Estúdio Copy &amp; Paste do KCU Estúdio, com a lista de vídeos virais encontrados.">
+            <h3>🔁 Copy &amp; Paste</h3>
+            <p>Encontra os vídeos que mais rebentaram e ajuda-te a refazê-los com a tua marca.</p>
+          </li>
+          <li class="cartao cartao--img">
+            <img src="img/estudio-pessoal.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Estúdio Pessoal do KCU Estúdio, com o molde de edição de um canal.">
+            <h3>🙋 Pessoal</h3>
+            <p>Tu gravas e o Estúdio edita com o teu molde: corta as pausas, legenda e segue o ritmo.</p>
+          </li>
+        </ul>
+        <a class="ligacao" href="https://github.com/KCUServices/kcu-estudio">Ver a montra no GitHub <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section id="produtos" class="seccao" aria-labelledby="produtos-titulo">
+      <div class="envolve">
+        <h2 id="produtos-titulo">Produtos</h2>
+        <p class="intro">Estes não estão no GitHub. Estão na loja KCU Services na Whop.</p>
+        <ul class="grelha grelha--produtos">
+          <li class="cartao cartao--produto">
+            <img src="img/produto-pihole.webp" width="692" height="350" loading="lazy" decoding="async" alt="Escudo verde a proteger uma casa e os seus aparelhos.">
+            <h3>🛡️ Pi-hole anti-apostas</h3>
+            <p>Fecha a porta às apostas e à pornografia na casa toda.</p>
+            <a class="botao botao--verde" href="https://whop.com/kcu-services/kcu-pihole-anti-apostas/">Ver na loja<span class="vh">: Pi-hole anti-apostas</span></a>
+          </li>
+          <li class="cartao cartao--produto">
+            <img src="img/produto-playbook.webp" width="692" height="350" loading="lazy" decoding="async" alt="Cadeado azul à frente de um servidor dentro de uma nuvem.">
+            <h3>🔒 Playbook de Proteção</h3>
+            <p>Blinda o teu servidor sem expor uma única porta.</p>
+            <a class="botao botao--verde" href="https://whop.com/kcu-services/kcu-playbook-protecao/">Ver na loja<span class="vh">: Playbook de Proteção</span></a>
+          </li>
+          <li class="cartao cartao--produto">
+            <img src="img/produto-checklist.webp" width="692" height="350" loading="lazy" decoding="async" alt="Prancheta com uma lista de verificação por cima de um servidor.">
+            <h3>✅ Checklist de Segurança do Servidor</h3>
+            <p>Os 10 passos, em lista de ação.</p>
+            <a class="botao botao--verde" href="https://whop.com/kcu-services/kcu-checklist-seguranca-servidor/">Ver na loja<span class="vh">: Checklist de Segurança do Servidor</span></a>
+          </li>
+          <li class="cartao cartao--produto">
+            <img src="img/produto-piggy.webp" width="692" height="350" loading="lazy" decoding="async" alt="Mealheiro em forma de porco ao lado de um caderno de notas.">
+            <h3>🐷 PIGGY + LifeOS</h3>
+            <p>As tuas finanças e as tuas notas, sem as entregar a ninguém.</p>
+            <a class="botao botao--verde" href="https://whop.com/kcu-services/kcu-piggy-lifeos/">Ver na loja<span class="vh">: PIGGY + LifeOS</span></a>
+          </li>
+          <li class="cartao cartao--produto">
+            <img src="img/produto-assistencia.webp" width="692" height="350" loading="lazy" decoding="async" alt="Portátil com um cursor e um balão de conversa.">
+            <h3>🤝 Assistência KCU</h3>
+            <p>Não sabes por onde começar? Começamos contigo.</p>
+            <a class="botao botao--verde" href="https://whop.com/kcu-services/kcu-assistencia/">Ver na loja<span class="vh">: Assistência KCU</span></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="comunidade" class="seccao" aria-labelledby="comunidade-titulo">
+      <div class="envolve">
+        <h2 id="comunidade-titulo">Comunidade</h2>
+        <p class="intro">As tuas ideias decidem o que melhora a seguir. As que entram ficam no registo de alterações com o teu nome.</p>
+        <ul class="grelha grelha--3">
+          <li class="cartao">
+            <h3><span aria-hidden="true">💡</span> Discussions</h3>
+            <p>Ideias, perguntas e o teu setup, no GitHub. Se algo não funciona, abre uma <em>issue</em> no repositório da ferramenta.</p>
+            <a class="ligacao" href="https://github.com/orgs/KCUServices/discussions">Entrar na conversa <span aria-hidden="true">→</span></a>
+          </li>
+          <li class="cartao">
+            <h3><span aria-hidden="true">📸</span> Instagram</h3>
+            <p>Novidades, bastidores e avisos quando algo novo sai.</p>
+            <a class="ligacao" href="https://www.instagram.com/kcu.services">@kcu.services <span aria-hidden="true">→</span></a>
+          </li>
+          <li class="cartao">
+            <h3><span aria-hidden="true">🛒</span> Loja</h3>
+            <p>Todos os produtos KCU Services num só sítio, na Whop.</p>
+            <a class="ligacao" href="https://whop.com/kcu-services/">Abrir a loja <span aria-hidden="true">→</span></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="envolve">
+      <p>O código e a documentação dos repositórios estão sob a licença <a href="https://polyformproject.org/licenses/noncommercial/1.0.0">PolyForm Noncommercial 1.0.0</a>: uso pessoal à vontade; para vender ou usar num negócio, fala connosco.</p>
+      <p>O nome KCU, os logótipos e as imagens dos produtos são da KCU Services, com todos os direitos reservados. <a href="https://github.com/KCUServices/.github/blob/main/MARCA.md">Marca e imagens</a>.</p>
+      <p class="rodape__fim">© 2026 KCU Services · Este site não usa cookies nem rastreadores.</p>
+    </div>
+  </footer>
+</body>
+</html>
